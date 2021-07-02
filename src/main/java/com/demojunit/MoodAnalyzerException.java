@@ -5,6 +5,7 @@ public class MoodAnalyzerException extends Exception {
 
 	enum ExceptionTypes {
 		NULL_POINTER_EXCEPTION, EMPTY_STRING_EXCEPTION, UNDEFINED_MOOD_EXCEPTION;
+
 		public class EMPTY_STRING_EXCEPTION extends Exception {
 
 		}

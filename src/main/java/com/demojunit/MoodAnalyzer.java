@@ -22,6 +22,7 @@ public class MoodAnalyzer {
 			if (message.toLowerCase().contains("sad")) {
 				return "SAD";
 			}
+			
 			return "HAPPY";
 		} catch (Exception e) {
 			e.printStackTrace();
