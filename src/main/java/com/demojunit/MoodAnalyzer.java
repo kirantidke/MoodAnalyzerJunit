@@ -12,20 +12,21 @@ public class MoodAnalyzer {
 		this.message = message;
 	}
 
-	MoodAnalyzer() {
-	}
-
-	public String analyseMood() {
-		if (message.toLowerCase().contains("sad")) {
-			return "SAD";
-		}
-		if (message.toLowerCase().contains("happy")) {
-			return "SAD";
-		}
-		if (message.toLowerCase().contains("any")) {
+	public String analyseMood() throws MoodAnalyzerException {
+		try {
+			if (message.equals(null)) {
+				throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionTypes.NULL_POINTER_EXCEPTION);
+			} else if (message.isEmpty()) {
+				throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionTypes.EMPTY_STRING_EXCEPTION);
+			}
+			if (message.toLowerCase().contains("sad")) {
+				return "SAD";
+			}
 			return "HAPPY";
-
-		} else
+		} catch (Exception e) {
+			e.printStackTrace();
+			
 			return "HAPPY";
+		}
 	}
 }
